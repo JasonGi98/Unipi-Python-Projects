@@ -1,0 +1,28 @@
+# Unipi-Python-Projects
+math_input=raw_input("Type a string of () symbols")
+math_input_split=[i for i in math_input]
+print math_input_split
+a1=math_input_split.count('(')
+a2=math_input_split.count(')')
+answer='FALSE'
+count1=0
+count2=0
+checkvar=1
+if (math_input_split[0]=='('):
+    if (a1==a2):
+        for i in range(a1+a2):
+            if (math_input_split[i]=='('):
+               count1=count1+1
+            if (math_input_split[i]==')'):
+                count2=count2+1
+            if(count2>count1):
+                checkvar=0
+    else:
+        checkvar=0
+else:
+    checkvar=0
+if (checkvar==1):
+    answer='TRUE'
+print "the answer is %s"%answer
+
+                
