@@ -1,0 +1,11 @@
+random_input = raw_input("Type a random string")
+random_input_split=[i for i in random_input]
+print "List before processing"
+print random_input_split
+a=random_input_split.count('0')
+print "There are %d zero characters in the string"%(a)
+for i in range(a):
+    random_input_split.remove('0')
+    random_input_split.append('0')
+print "List after proccessing"
+print random_input_split
