@@ -1,0 +1,42 @@
+#code is not working properly due to a lot of mistakes
+#so i did the best i could to present
+#what i wanted to do
+import tweepy
+from tweepy import OAuthHandler
+consumer_key = '2E6KXI8Q5hKEyy44sezcECbG8'
+consumer_secret = 're5NS9t7ED8AJinbksHel6KHea5J8O8pJ7TCVhE5u5AesxJcAc'
+access_token = '836259023401930754-tAISneKl0wxzZl2VNmjOXAtpIGartiO'
+access_secret = 'b9hMWF7xiG0S13WGqGkWQ4p0nmI0UZNtDNXCaaUuN60gM'
+auth = OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_secret)
+api = tweepy.API(auth)
+user_input1=raw_input("Type the screen name for the first user")
+user_input2=raw_input("Type the screen name for the second user")
+stuff1= api.user_timeline(id='user_input1',count=10)
+stuff2= api.user_timeline(id='user_input2',count=10)
+#i get the tweets in json format
+txt1=stuff1['text']
+txt2=stuff2['text']
+#i try to get the text through the json data
+text1_split=[i for i in text1]
+text2_split=[i for i in text2]
+count1=0
+count2=0
+count1=text1_split.count(' ')+1
+count2=text2_split.count(' ')+1
+#i count the number of words using
+#the space symbol plus 1
+if (count1>count2):
+    print ("The first user has more words in his tweets")
+if (count2>count1):
+    print ("The second user has more words in his tweets")
+if (count1==count2):
+    print("Both users have the same amount of words in their tweets")
+
+
+    
+
+
+
+
+                                          
